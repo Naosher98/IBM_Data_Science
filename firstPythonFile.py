@@ -4,11 +4,12 @@ pdf1 = input('Input pdf 1: ')
 print('\n')
 pdf2 = input('Input pdf 2: ')
 print('\n')
-outputPdf = input('Name Outcome Pdf: ')
+outputPdf = input('Name New Pdf's Name: ')
 def pdf(x):
 	pdfObj= open(x,'rb')
 	pdfReader= PyPDF2.PdfFileReader(pdfObj)
 	return pdfReader
+	# This returns a list 
 
 pdfReader1 = pdf(pdf1)
 pdfReader2 = pdf(pdf2)
@@ -29,5 +30,6 @@ for i in range(pdfReader2.numPages):
 pdfOutputFile =open(outputPdf,'wb')
 pdfWriter.write(pdfOutputFile)
 pdfOutputFile.close()
+# This part below has a bug!
 pdfObj1.close()
 pdfObj2.close()
